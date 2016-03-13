@@ -1,0 +1,8 @@
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\bin\Debug\BookStoreServiceTests.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\bin\Debug\BookStoreServiceTests.pdb
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\obj\Debug\BookStoreServiceTests.csprojResolveAssemblyReference.cache
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\obj\Debug\BookStoreServiceTests.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\obj\Debug\BookStoreServiceTests.pdb
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\bin\Debug\BookStoreService.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreServiceTests\bin\Debug\BookStoreService.pdb

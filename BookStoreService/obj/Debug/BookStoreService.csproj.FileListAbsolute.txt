@@ -1,0 +1,4 @@
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreService\bin\Debug\BookStoreService.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreService\bin\Debug\BookStoreService.pdb
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreService\obj\Debug\BookStoreService.dll
+D:\Project\Practice\VS2015\TDD_HomeWork_Day2\BookStoreService\obj\Debug\BookStoreService.pdb
