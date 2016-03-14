@@ -12,17 +12,22 @@ namespace BookStoreService
             var totalPrice = 0;
             totalPrice = books.Sum(x => x.Price);
 
-            if (books.Count() == 2 && books.GroupBy(x => x.Name).Count() == 2)
+            if (books.Count() == books.GroupBy(x => x.Name).Count())
             {
-                totalPrice = (int)(totalPrice * 0.95);
-            }
-            else if (books.Count() == 3 && books.GroupBy(x => x.Name).Count() == 3)
-            {
-                totalPrice = (int)(totalPrice * 0.9);
-            }
-            else if (books.Count() == 4 && books.GroupBy(x => x.Name).Count() == 4)
-            {
-                totalPrice = (int)(totalPrice * 0.8);
+                switch (books.Count())
+                {
+                    case 2:
+                        totalPrice = (int)(totalPrice * 0.95);
+                        break;
+
+                    case 3:
+                        totalPrice = (int)(totalPrice * 0.9);
+                        break;
+
+                    case 4:
+                        totalPrice = (int)(totalPrice * 0.8);
+                        break;
+                }
             }
 
             return totalPrice;
