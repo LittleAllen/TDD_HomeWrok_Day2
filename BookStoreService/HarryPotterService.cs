@@ -27,6 +27,10 @@ namespace BookStoreService
                     case 4:
                         totalPrice = (int)(totalPrice * 0.8);
                         break;
+
+                    case 5:
+                        totalPrice = (int)(totalPrice * 0.75);
+                        break;
                 }
             }
 
