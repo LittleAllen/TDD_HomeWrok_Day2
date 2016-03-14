@@ -11,6 +11,26 @@ namespace BookStoreService
         {
             var totalPrice = 0;
 
+            var groupBooksList = this.GetDiscountGroup(books);
+
+            //// 統計各組的金額
+            foreach (var groupBooks in groupBooksList)
+            {
+                var groupTotalPrice = groupBooks.Sum(x => x.Price);
+                var discount = this.GetDiscount(groupBooks.Count());
+                totalPrice += (int)(groupTotalPrice * discount);
+            }
+
+            return totalPrice;
+        }
+
+        /// <summary>
+        /// 取得折扣群組
+        /// </summary>
+        /// <param name="books">哈利波特購買清單</param>
+        /// <returns>折扣群組</returns>
+        private List<List<HarryPortterBook>> GetDiscountGroup(List<HarryPortterBook> books)
+        {
             var groupBooksList = new List<List<HarryPortterBook>>();
 
             //// 將小說分組, 不同集數的為一組
@@ -40,15 +60,7 @@ namespace BookStoreService
                 }
             }
 
-            //// 統計各組的金額
-            foreach (var groupBooks in groupBooksList)
-            {
-                var groupTotalPrice = groupBooks.Sum(x => x.Price);
-                var discount = this.GetDiscount(groupBooks.Count());
-                totalPrice += (int)(groupTotalPrice * discount);
-            }
-
-            return totalPrice;
+            return groupBooksList;
         }
 
         /// <summary>
