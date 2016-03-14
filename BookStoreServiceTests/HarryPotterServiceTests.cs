@@ -109,5 +109,26 @@ namespace BookStoreServiceTests
             //// Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void 一二集各買了一本_第三集買了兩本_價格應為370()
+        {
+            //// Arrange
+            var books = new List<HarryPortterBook>();
+            books.Add(new HarryPortterBook { Name = "哈利波特第一集", Episode = 1, Price = 100 });
+            books.Add(new HarryPortterBook { Name = "哈利波特第二集", Episode = 2, Price = 100 });
+            books.Add(new HarryPortterBook { Name = "哈利波特第三集", Episode = 3, Price = 100 });
+            books.Add(new HarryPortterBook { Name = "哈利波特第三集", Episode = 3, Price = 100 });
+            
+            var target = new HarryPotterService();
+
+            var expected = 370;
+
+            //// Act
+            var actual = target.CalculatePrice(books);
+
+            //// Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
