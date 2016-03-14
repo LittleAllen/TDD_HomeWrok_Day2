@@ -9,7 +9,10 @@ namespace BookStoreService
     {
         public object CalculatePrice(List<HarryPortterBook> books)
         {
-            throw new NotImplementedException();
+            var totalPrice = 0;
+            totalPrice = books[0].Price;
+
+            return totalPrice;
         }
     }
 }
