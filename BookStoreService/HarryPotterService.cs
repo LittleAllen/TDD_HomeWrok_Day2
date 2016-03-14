@@ -20,6 +20,10 @@ namespace BookStoreService
             {
                 totalPrice = (int)(totalPrice * 0.9);
             }
+            else if (books.Count() == 4 && books.GroupBy(x => x.Name).Count() == 4)
+            {
+                totalPrice = (int)(totalPrice * 0.8);
+            }
 
             return totalPrice;
         }
