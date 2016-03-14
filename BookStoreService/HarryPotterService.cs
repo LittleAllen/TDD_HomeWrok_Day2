@@ -10,24 +10,11 @@ namespace BookStoreService
         public object CalculatePrice(List<HarryPortterBook> books)
         {
             var totalPrice = 0;
+            totalPrice = books.Sum(x => x.Price);
 
-            switch(books.Count())
+            if(books.Count() == 2 && books[0].Name != books[1].Name)
             {
-                case 1:
-                    totalPrice = books[0].Price;
-                    break;
-                case 2:
-
-                    if (books[0].Name == books[1].Name)
-                    {
-                        totalPrice = books.Sum(x => x.Price);
-                    }
-                    else
-                    {
-                        totalPrice = (int)(books.Sum(x => x.Price) * 0.95);
-                    }
-
-                    break;
+                totalPrice = (int)(totalPrice * 0.95);
             }
 
             return totalPrice;
