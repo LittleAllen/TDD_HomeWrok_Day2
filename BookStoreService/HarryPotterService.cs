@@ -10,12 +10,42 @@ namespace BookStoreService
         public object CalculatePrice(List<HarryPortterBook> books)
         {
             var totalPrice = 0;
-            totalPrice = books.Sum(x => x.Price);
 
-            if (books.Count() == books.GroupBy(x => x.Name).Count())
+            var groupBooksList = new List<List<HarryPortterBook>>();
+
+            //// 將小說分組, 不同集數的為一組
+            foreach (var book in books)
             {
-                var discount = this.GetDiscount(books.Count());
-                totalPrice = (int)(totalPrice * discount);
+                if (groupBooksList.Count == 0)
+                {
+                    groupBooksList.Add(new List<HarryPortterBook>());
+                }
+
+                //// 是否有分到組
+                bool hasGroup = false;
+                foreach (var item in groupBooksList)
+                {
+                    if (item.Exists(x => x.Name == book.Name) == false)
+                    {
+                        item.Add(book);
+                        hasGroup = true;
+                        break;
+                    }
+                }
+
+                //// 無分到組的自行成立一組
+                if (hasGroup == false)
+                {
+                    groupBooksList.Add(new List<HarryPortterBook> { book });
+                }
+            }
+
+            //// 統計各組的金額
+            foreach (var groupBooks in groupBooksList)
+            {
+                var groupTotalPrice = groupBooks.Sum(x => x.Price);
+                var discount = this.GetDiscount(groupBooks.Count());
+                totalPrice += (int)(groupTotalPrice * discount);
             }
 
             return totalPrice;
